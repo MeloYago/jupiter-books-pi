@@ -1,0 +1,215 @@
+$standardSpace: 16px;
+$fontStyle: $standardSpace sans-serif;
+$maxWidht: 1200px;
+
+$primaryColor: #9a52ec;
+$secondaryColor: #725297;
+$terciaryColor: #ffff;
+$lightGrey: #ffffff5b;
+$shadow: 0 0 10px rgba(51, 51, 51, 0.2);
+$backdrop: rgba(0, 0, 0, 0.2);
+$darkTheme: rgb(121, 41, 121);
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: $fontStyle;
+    color: $secondaryColor;
+}
+
+button {
+    font: $fontStyle;
+    padding: $standardSpace;
+    background: $primaryColor;
+    border: none;
+    color: $terciaryColor;
+    cursor: pointer;
+
+    width: 100%;
+
+    &:hover {
+        background: $terciaryColor;
+        color: $primaryColor;
+    }
+}
+
+input {
+    font: $fontStyle;
+    padding: $standardSpace;
+    border: 1px solid $primaryColor;
+    font-size: $standardSpace;
+    background: $lightGrey;
+}
+
+nav {
+    height: 10vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .nav-container {
+        max-width: $maxWidht;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        img {
+            height: 80px;
+        }
+
+    }
+}
+
+.input-section {
+    height: 40vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    form {
+        max-width: $maxWidht;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h5 {
+            font-size: 2* $standardSpace margin $standardSpace;
+        }
+
+        .form-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: $standardSpace;
+            width: 100%;
+        }
+
+        .product-inputs {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-gap: $standardSpace;
+            width: 100%;
+        }
+    
+    }
+}
+
+.products-section {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: flex;
+    justify-content: center;
+
+    .products-container {
+        max-width: $maxWidht;
+        width: 100%;
+        height: 100%;
+
+        flex-direction: column;
+        justify-content: space-between;
+        display: grid;
+        grid-gap: 3* $standardSpace;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        .card {
+            padding: $standardSpace;
+            box-shadow: $shadow;
+
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h2 {
+                font-size: 2* $standardSpace;
+            }
+
+            p {
+                font-size: $standardSpace;
+            }
+
+            .card-info {
+                display: grid;
+                margin-top: 2* $standardSpace;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.backdrop {
+    width: 100%;
+    height: 100%;
+    background: $backdrop;
+
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .modal {
+        background: $terciaryColor;
+        max-width: 600px;
+        width: 100%;
+        min-height: 50vh;
+        padding: 3* $standardSpace;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            margin-bottom: $standardSpace;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            input {
+                margin: $standardSpace 0;
+            }
+
+            button {
+                margin: $standardSpace 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: $primaryColor;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                &:hover {
+                    color: $darkTheme;
+                }
+            }
+        }
+    }
+
+}
+
+.container {
+    text-align: center;
+}
