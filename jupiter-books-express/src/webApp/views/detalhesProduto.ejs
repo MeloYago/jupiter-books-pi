@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Detalhe de Produtos</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="/home" class="nav-item nav-link">Home</a>
+            <a href="/modProduct" class="nav-item nav-link">Modificar Produto</a>
+            <a href="/modUser" class="nav-item nav-link">Modificar Usuário</a>
+            <a href="/autenticar" class="nav-item nav-link">Acesse sua conta!</a>
+        </div>
+    </nav>
+
+    <h1>Detalhes do produto</h1>
+
+    <p>
+        <%= produto.nome %>
+    </p>
+    <p>
+        <%= produto.autor %>
+    </p>
+    <p>
+        <%= produto.categoria %>
+    </p>
+    <p>
+        <%= produto.sinopse %>
+    </p>
+    <p>R$<%= produto.preco %>,00</p>
+</body>
+
+</html>

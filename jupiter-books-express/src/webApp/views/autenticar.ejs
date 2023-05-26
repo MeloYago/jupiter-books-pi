@@ -5,26 +5,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autenticar</title>
+    <title>Autenticar Usuário</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <section>
-        <h1>Identificação</h1>
-        <form action="/autenticar" method="post">
-            <div>
-                <label for="email">E-mail</label>
-                <input id="email" name="email" type="text">
+        <div className="backdrop">
+            <div className="modal">
+                <h1>Identificação</h1>
+                <form action="/autenticar" method="post">
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="text">
+                    </div>
+                    <div>
+                        <label for="senha">Senha</label>
+                        <input id="senha" name="senha" type="password">
+                    </div>
+                    <div>
+                        <button type="submit">Autenticar</button>
+                    </div>
             </div>
-            <div>
-                <label for="senha">Senha</label>
-                <input id="senha" name="senha" type="password">
-            </div>
-            <div>
-                <button type="submit">Autenticar</button>
-            </div>
+        </div>
         </form>
+        <a href="/registrar">Não possuo conta</a>
+        <hr />
+        <a href="/home">Home</a>
     </section>
+
 </body>
 
 </html>

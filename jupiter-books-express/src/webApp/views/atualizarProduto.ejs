@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Produtos</title>
+    <title>Atualizar Livro</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <section>
-        <h1>Cadastre um novo Livro!</h1>
-        <form action="/cadastrar_produtos" method="post">
+        <h1>Atualizar Livro</h1>
+        <form action='/atualizarProduto' method="post">
             <div>
                 <label for="nome">Nome</label>
                 <input id="nome" name="nome" type="text">
@@ -26,14 +27,18 @@
             </div>
             <div>
                 <label for="sinopse">Sinopse</label>
-                <textarea id="sinopse" name="sinopse" minlength=20  maxlength=200 ></textarea>
+                <textarea id="sinopse" name="sinopse" minlength=20 maxlength=200></textarea>
             </div>
             <div>
                 <label for="preco">Preço</label>
                 <input id="preco" name="preco" type="number">
             </div>
+            </div>
+            <label for="id">ID</label>
+            <input id="id" name="id" type="number">
+            </div>
             <div>
-                <button type="submit">Cadastrar</button>
+                <button type="submit">Atualizar</button>
             </div>
         </form>
     </section>

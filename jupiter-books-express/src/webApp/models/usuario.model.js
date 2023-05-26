@@ -13,12 +13,28 @@ function criar(usuario) {
     })
 }
 
-function atualizar() {
-
+function atualizarUser(usuarioAtualizado) {
+    Usuario.update({
+        nome: usuarioAtualizado.nome,
+        telefone: usuarioAtualizado.telefone,
+    },
+        {
+            where: {
+                id: usuarioAtualizado.id,
+            }
+        })
 }
 
-function deletar() {
-
+function atualizarCredencial(credencialAtualizada) {
+    Credencial.update({
+        email: credencialAtualizada.email,
+        senha: credencialAtualizada.senha,
+    },
+        {
+            where: {
+                id: credencialAtualizada.id,
+            }
+        })
 }
 
 async function obterUmaCredencial(credencial) {
@@ -32,9 +48,27 @@ async function obterUmaCredencial(credencial) {
     return usuarioProcurado
 }
 
+function deletarUsuario(id) {
+    Usuario.destroy({
+        where: {
+            id
+        }
+    })
+}
+
+function deletarCredencial(id) {
+    Credencial.destroy({
+        where: {
+            id
+        }
+    })
+}
+
 module.exports = {
     criar,
-    atualizar,
-    deletar,
-    obterUmaCredencial
+    atualizarUser,
+    deletarUsuario,
+    obterUmaCredencial,
+    atualizarCredencial,
+    deletarCredencial
 }

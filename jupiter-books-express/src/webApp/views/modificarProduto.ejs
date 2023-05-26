@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifique um Produto</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>O que deseja fazer?</h1>
+
+     <a href='/cadastrar_produtos'>
+        <button type="button" class="btn btn-primary">Cadastrar Livro</button>
+    </a> 
+
+    <a href='/atualizar_produto'>
+        <button type="button" class="btn btn-primary">Atualizar Livro</button>
+    </a>
+
+    <section>
+        <h1>Excluir Livro</h1>
+        <form action='/modProduct/excluir' method="post">
+            <div>
+                <label for="id">Digite o id</label>
+                <input id="id" name="id" type="text">
+            </div>
+            <div>
+                <button type="submit">Excluir</button>
+            </div>
+        </form>
+    </section>
+
+    <a href='/home'>
+        <button type="button" class="btn btn-primary">Home</button>
+    </a>
+
+    <a href='/produtos'>
+        <button type="button" class="btn btn-primary">Produtos</button>
+    </a>
+
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-const { Livros } = require ('../../infra') 
+const { Livros } = require('../../infra')
 
 function criar(livro) {
     Livros.create({
@@ -10,27 +10,56 @@ function criar(livro) {
     })
 }
 
-function atualizar() {
-
+function atualizarLivro(livroAtualizado) {
+    Livros.update({
+        nome: livroAtualizado.nome,
+        autor: livroAtualizado.autor,
+        categoria: livroAtualizado.categoria,
+        sinopse: livroAtualizado.sinopse,
+        preco: livroAtualizado.preco,
+    },
+        {
+            where: {
+                id: livroAtualizado.id,
+            }
+        })
 }
 
-function deletar() {
-
-}
-
-async function obterUmLivroPorCategoria (livro) {
-    const livroProcurado = await Livro.findOne({
+function deletarLivro(id) {
+    Livros.destroy({
         where: {
-            categoria: livro.categoria,
+            id
         }
     })
-
-    return livroProcurado
 }
+
+function obterLivros() {
+
+    try {
+        const produtos = Livros.findAll()
+        return produtos
+    }
+    catch (error) {
+        return error
+    }
+}
+
+function obterLivroPelaId(idProduto) {
+
+    try {
+        const produto = Livros.findByPk(idProduto)
+        return produto
+    }
+    catch (error) {
+        return error
+    }
+}
+
 
 module.exports = {
     criar,
-    atualizar,
-    deletar,
-    obterUmLivroPorCategoria
+    atualizarLivro,
+    deletarLivro,
+    obterLivros,
+    obterLivroPelaId
 }
